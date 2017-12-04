@@ -1,0 +1,22 @@
+    a- If rem_bt[i] > quantum
+       (i)  t = t + quantum
+       (ii) bt_rem[i] -= quantum;
+    c- Else // Last cycle for this process
+       (i)  t = t + bt_rem[i];
+       (ii) wt[i] = t - bt[i]
+       (ii) bt_rem[i] = 0; // This process is over).
+
+
+                           time_inc = False
+                    if not job.started:
+                        job.st = time
+                        job.started = True
+
+                    if job.rem > q:
+                        time += q
+                        job.rem -= q
+                    else:
+                        time += job.rem
+                        job.end_time = time
+                        job.wt = job.st - job.ar
+                        job.rem = 0
